@@ -1,3 +1,7 @@
 Example of usage React Redux.
-User can provide name and based on value gets user's data via api
 
+<p>User can provide name and if exists in users API then can click on suggestions under input.</p>
+
+<p> </p>
+<p>yarn install </p>
+<p>yarn start </p>

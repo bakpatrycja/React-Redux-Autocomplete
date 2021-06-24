@@ -1,0 +1,12 @@
+ul {
+    list-style-type: none;
+    color:darkslategray;
+    padding-left: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+li {
+    background-color: #FDDEF2;
+    padding: 5px;
+    margin: 5px 0 5px 0;
+}

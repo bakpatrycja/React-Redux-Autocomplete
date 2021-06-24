@@ -1,9 +1,9 @@
 import React from 'react';
+import '../css/Autocomplete.css'
 
 const Autocomplete = (props) => {
 let suggestions
 let { data , dispatch } = props;
-let showing = false;
 
 const setInputValue = (name) => {
   dispatch({type: 'setSelectedUser', choice: name}) 
@@ -11,19 +11,18 @@ const setInputValue = (name) => {
 }
 
 if (Array.isArray(data)) {
-  showing = true;
   suggestions = data.map(function(item, index) {
     return ([
-        <ul>
-          <li key={index}> <button  key={index} onClick={()=>setInputValue(item.name)} > {item.name} </button></li>
-        </ul>
+          <li key={index} onClick={()=>setInputValue(item.name)}> {item.name}</li>
     ]);
  });
 }
 
   return (
     <div className="Autocomplete">
-      {suggestions}
+       <ul className="searchlist--wrapper">
+        {suggestions}
+       </ul>
     </div>
   );
 }

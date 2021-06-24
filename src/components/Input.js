@@ -1,5 +1,6 @@
 import React, {useEffect} from 'react';
 import Autocomplete from './Autocomplete';
+import '../css/Input.css'
 
 function inputReducer( state, action ) {
   switch ( action.type ) {
@@ -39,7 +40,7 @@ useEffect(() => {
 
 const filterUsers = ( inputData ) => {
   dispatch({type: 'setSelectedUser', choice: inputData})
-   
+
   if ( inputData ) {
     const data = inputState.listOfUsers;
     let users = data.filter(function( rawDataElement ) {
@@ -54,7 +55,7 @@ const filterUsers = ( inputData ) => {
   return (
     <div className="App">
           <div>
-            <input value={inputState.usersChoice} onChange={(e) => filterUsers( e.target.value )} type="text"/>
+            <input className="inputBorder" value={inputState.usersChoice} onChange={(e) => filterUsers( e.target.value )} type="text"/>
             <Autocomplete dispatch={dispatch} data={inputState.listOfUsersFiltered}/>
           </div>
     </div>
