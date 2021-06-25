@@ -51,9 +51,9 @@ const filterUsers = ( inputData ) => {
     let users = data.filter(function( rawDataElement ) {
       return rawDataElement.name.includes(inputData) === true
     })
-    dispatch({type: 'getUsersValue', filteredAnswer: users})  
+    dispatch( {type: 'getUsersValue', filteredAnswer: users} )  
   } else {
-    dispatch({type: 'getUsersValue', filteredAnswer: ''})  
+    dispatch( {type: 'getUsersValue', filteredAnswer: ''} )  
   }
 }
 

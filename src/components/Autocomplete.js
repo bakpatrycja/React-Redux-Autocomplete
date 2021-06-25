@@ -1,7 +1,7 @@
 import React from 'react';
 import '../css/Autocomplete.css'
 
-const Autocomplete = (props) => {
+const Autocomplete = ( props ) => {
 let suggestions
 let { data , dispatch } = props;
 
@@ -10,10 +10,10 @@ const setInputValue = (name) => {
   dispatch({type: 'getUsersValue', filteredAnswer: ''})  
 }
 
-if (Array.isArray(data)) {
-  suggestions = data.map(function(item, index) {
+if ( Array.isArray( data ) ) {
+  suggestions = data.map(function( item, index ) {
     return ([
-          <li key={index} onClick={()=>setInputValue(item.name)}> {item.name}</li>
+          <li key={index} onClick={()=>setInputValue( item.name )}> {item.name}</li>
     ]);
  });
 }
