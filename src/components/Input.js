@@ -31,9 +31,14 @@ const [inputState, dispatch] = React.useReducer( inputReducer, {usersChoice: '',
 
 useEffect(() => {
   const fetchData = async () => {
-      let answer  = await fetch('https://jsonplaceholder.typicode.com/users')
-      let answerJson = await answer.json();
-      dispatch({type: 'setInitialState', apiAnswer: answerJson})
+      try {
+        let answer  = await fetch('https://jsonplaceholder.typicode.com/users')
+        let answerJson = await answer.json();
+        dispatch({type: 'setInitialState', apiAnswer: answerJson});
+      }
+      catch(err) {
+        console.log(`User API Error occured: ${err}`)
+      }
   };
   fetchData();
 }, []);
